@@ -20,6 +20,14 @@ const Calculator = {
     divide : function divide() {return 10/5}
 }
 
-function actionApplyer(int, arr){
-    return arr.reduce((acc, func) => func(acc), int);
+function actionApplyer(int, arr) {
+    // arr as an example; [func1, func2, func3]
+    let result = int;
+    for(let i = 0; i < arr.length; i++) {
+        let func = arr[i];
+        result = func(result);
+    }
+
+    return result;
+    // return arr.reduce((acc, func) => func(acc), int);
 }
